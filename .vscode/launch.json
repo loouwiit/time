@@ -27,7 +27,7 @@
 					"ignoreFailures": true
 				}
 			],
-			"preLaunchTask": "C/C++: g++ 编译 linux"
+			//"preLaunchTask": "C/C++: g++ 编译 linux"
 		}
 	]
 }

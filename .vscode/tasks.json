@@ -9,8 +9,8 @@
                 "-fPIC",
                 "-g",
                 "${workspaceFolder}/time/main.cpp",
-                "-I/home/lo/File/Develop/C++/lib/SFML-2.5.0/include",
-                "-L/home/lo/File/Develop/C++/lib/SFML-2.5.0/lib",
+                //"-I/home/lo/File/Develop/C++/lib/SFML-2.5.0/include",
+                //"-L/home/lo/File/Develop/C++/lib/SFML-2.5.0/lib",
                 "-lsfml-system",
                 "-lsfml-window",
                 "-lsfml-graphics",
@@ -37,6 +37,7 @@
                 "-fdiagnostics-color=always",
                 //"-static",
                 //"-DSFML_STATIC=1",
+                "-mwindows", //隐藏控制台
                 "-g",
                 "${workspaceFolder}/time/main.cpp",
                 "-I/home/lo/File/Develop/C++/lib/SFML-2.5.0-windows/include",
