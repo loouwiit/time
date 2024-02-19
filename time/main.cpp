@@ -182,10 +182,13 @@ void event(sf::Event::MouseMoveEvent& event)
 	else if (sizeChange)
 	{
 		auto position = window.mapPixelToCoords({ event.x, event.y });
-		unsigned size = (unsigned)(timeText.getCharacterSize() * timeText.getScale().x) + (unsigned)(position.x - lastButtonPosition.x);
-		lastButtonPosition = position;
-		setTextSize(size);
-		lastSceond = 61;
+		signed size = (signed)(timeText.getCharacterSize() * timeText.getScale().x) + (signed)(position.x - lastButtonPosition.x);
+		if (size >= 10)
+		{
+			lastButtonPosition = position;
+			setTextSize((unsigned)size);
+			lastSceond = 61;
+		}
 	}
 }
 
@@ -196,7 +199,7 @@ void sleep()
 
 void setTextSize(unsigned int size)
 {
-	if (10 < size && size < SizeLimit)
+	if (10 <= size && size < SizeLimit)
 	{
 		timeText.setCharacterSize(size);
 		timeText.setScale({ 1, 1 });
